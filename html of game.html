@@ -6,62 +6,93 @@
     <title>3 Container Layout</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-        }
+       * {
+    box-sizing: border-box;
+}
 
-        /* Main wrapper */
-        .layout {
-            display: flex;
-            min-height: 100vh;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
 
-        /* Left & Right sidebars */
-        .left, .right {
-            width: 20%;
-            background: #ddd;
-            padding: 10px;
-        }
+/* Main layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
 
-        /* Center (game area) */
-        .center {
-            width: 60%;
-            background: #fff;
-            padding: 10px;
-        }
+/* Side panels */
+.left,
+.right {
+    width: 20%;
+    background: #ddd;
+    padding: 10px;
+}
 
-        /* Game container */
-        .game-container {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        } 
+/* Center game area */
+.center {
+    width: 60%;
+    background: #000;
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
 
-        .game-content {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
+/* Portrait game screens */
+.game-container,
+.game-content {
+    flex: 1;                  /* equal width */
+    aspect-ratio: 9 / 16;
+    max-height: 100vh;
+    background: #000;
 
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .layout {
-                flex-direction: column;
-            }
-            .left, .center, .right {
-                width: 100%;
-            }
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        order: 2;
+    }
+
+    .center {
+        width: 100%;
+        order: 1;
+        flex-direction: row;
+    }
+}
+
+.left,
+.right {
+    width: 20%;
+    background: #ddd;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Button sa baba */
+.left button,
+.right button {
+    margin-top: auto;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+ 
     </style>
 </head>
 <body>
@@ -70,8 +101,9 @@
 
         <!-- Left container -->
         <div class="left">
-            <h3>Left Panel</h3>
-            <p>Ads / Menu / Info</p>
+            <h3 style="text-align: center; background-color: pink;" >Please Choose Your Character</h3>
+            <p></p>
+            <button id="start-game" onclick="button">button</button>
         </div>
 
         <!-- Center container -->
@@ -84,10 +116,9 @@
 
         <!-- Right container -->
         <div class="right">
-            <h3>Right Panel</h3>
-            <p>Stats / Controls</p>
-            <button id="start-game" onclick="
-           click ">button</button>
+            <h3 style="text-align: center; background-color: pink; " >Please Choose Your Character</h3>
+            <p></p>
+            <button id="start-game" onclick="button">button</button>
         </div>
 
     </div>
