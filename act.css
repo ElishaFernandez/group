@@ -1,0 +1,38 @@
+body {
+    background-image: url("https://wallpapercat.com/w/full/8/8/2/141839-3840x2160-desktop-4k-naruto-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.Bridge{
+    border-style: ridge;
+    border-width: 25px;
+     background-color: #FFCCCC  ;
+    
+}
+
+li {
+  display: inline-block;
+  margin: 0 15px;
+  background-color: pink;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #FF33FF;
+  font-size: 18px;
+}
+
